@@ -1,0 +1,62 @@
+{
+    "sourceFile": "index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1769768803683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1769768810878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +0,0 @@\n-<!DOCTYPE html>\r\n-<html lang=\"en\">\r\n-<head>\r\n-    <meta charset=\"UTF-8\">\r\n-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n-    <title>Document</title>\r\n-</head>\r\n-<body>\r\n-    \r\n-</body>\r\n-</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1769770044415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+<!DOCTYPE html>\r\n+<html lang=\"en\">\r\n+<head>\r\n+    <meta charset=\"UTF-8\">\r\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n+    <title>Document</title>\r\n+</head>\r\n+<body>\r\n+    \r\n+</body>\r\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1769770051348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n <html lang=\"en\">\r\n <head>\r\n     <meta charset=\"UTF-8\">\r\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n-    <title>Document</title>\r\n+    <title>Simple WebPage</title>\r\n </head>\r\n <body>\r\n     \r\n </body>\r\n"
+                },
+                {
+                    "date": 1769770126150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n     <title>Simple WebPage</title>\r\n </head>\r\n <body>\r\n-    \r\n+    <div class=\"container\">\r\n+        <h1></h1>\r\n+    </div>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1769770373198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n     <title>Simple WebPage</title>\r\n </head>\r\n <body>\r\n     <div class=\"container\">\r\n-        <h1></h1>\r\n+        \r\n     </div>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1769770384214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n     <title>Simple WebPage</title>\r\n </head>\r\n <body>\r\n-    <div class=\"container\">\r\n+    <div class=\"\">\r\n         \r\n     </div>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1769770392859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n     <title>Simple WebPage</title>\r\n </head>\r\n <body>\r\n-    <div class=\"\">\r\n+    <div class=\"navbar\">\r\n         \r\n     </div>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1769770405202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n     <title>Simple WebPage</title>\r\n </head>\r\n <body>\r\n     <div class=\"navbar\">\r\n+        <img src=\"\" alt=\"\">\r\n         \r\n     </div>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1769770426779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     <title>Simple WebPage</title>\r\n </head>\r\n <body>\r\n     <div class=\"navbar\">\r\n-        <img src=\"\" alt=\"\">\r\n-        \r\n+        <img src=\"https://logosmarcas.net/wp-content/uploads/2020/11/Zomato-Logo-650x366.png\" alt=\"\">\r\n+\r\n     </div>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1769770437388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n </head>\r\n <body>\r\n     <div class=\"navbar\">\r\n         <img src=\"https://logosmarcas.net/wp-content/uploads/2020/11/Zomato-Logo-650x366.png\" alt=\"Zomato Logo\">\r\n+        \r\n \r\n     </div>\r\n </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770013655627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,9 +87,9 @@\n                 <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-bookmark\" viewBox=\"0 0 16 16\">\r\n                     <path d=\"M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z\"/>\r\n                 </svg>\r\n             </div>\r\n-            <p class=\"p1\">Lorem ipsum dolor sit amet consectetur adipisicing.</p> lorem\r\n+            <p class=\"p1\">Lorem ipsum dolor sit amet consectetur adipisicing.</p> lorem7\r\n         </div>\r\n \r\n         <div class=\"container\">\r\n             <div class=\"header\">\r\n"
+                }
+            ],
+            "date": 1769768803682,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Document</title>\r\n</head>\r\n<body>\r\n    \r\n</body>\r\n</html>"
+        }
+    ]
+}
