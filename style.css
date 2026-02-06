@@ -92,11 +92,50 @@ body {
 /* Contact form starts here */
 .contact {
     max-width: 420px;
-    margin:20px auto;
-    padding:20px;
+    margin:50px auto;
+    padding:25px;
     border:1px solid lightgray;
     border-radius:10px;
-    
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.contact h2 {
+    text-align:center;
+    margin-bottom:20px;
+}
+.contact .subtext {
+    font-size:16px;
+    color:gray;
+    text-align:center;
+    margin-bottom:20px;
+}
+.contact .form-group {
+    display:flex;
+    flex-direction:column;
+    margin-bottom:15px;
+}
+.form-group input,
+.form-group textarea {
+    padding:10px;
+    border:1px solid lightgray;
+    font-size:15px;
+    border-radius:5px;
+    resize:vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: black;
+    outline:none;
+}
+.contact .btn {
+    background-color:red;
+    color:white;
+    border:none;
+    padding:10px;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;
+
 }
 /* FOoter starts here*/
 .footer {
