@@ -6,15 +6,15 @@ body {
 /* Navigation Bar Starts here */
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 20px;
 }
 .navbar .logo {
     height: 80px;
-    transform: scale(1.2);
+    width: auto;
 }
 .navbar .btn {
     background-color: red;
@@ -30,8 +30,10 @@ body {
 }
 .nav-menu {
     display: flex;
-    gap: 30px;
+    gap: 28px;
     align-items: center;
+    flex: 1;
+    justify-content: center;
 }
 .nav-link {
     text-decoration: none;
@@ -43,8 +45,53 @@ body {
 .nav-link:hover {
     color: red;
 }
+/*HOME SECTION STYLING*/
+.home-section {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    flex-wrap: wrap;
+}
+.home-content {
+    max-width: 500px;
+}
+.home-content h1 {
+    font-size:40px;
+    margin-bottom:20px;
+    line-height:1.2;
+}
+.home-content p {
+    font-size:18px;
+    margin-bottom:30px;
+    color:#555;
+}
+.home-image img {
+    width:100%;
+    max-width:420px;
+    border-radius:15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.home-image:hover {
+    transform: scale(1.05);
+    transition:all 0.3s ease;
+}
+.home-section .btn {
+    background-color:red;
+    color:white;
+    border:none;
+    padding:12px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+.home-section .btn:hover {
+    background-color:darkred;
+}
 
-/* Main Body Container flexbox */
+/* Main Body Container flexbox (MENU ITEMS)*/
 .flexbox {
     display: flex;
     flex-wrap: wrap;
@@ -52,6 +99,11 @@ body {
     justify-content: center;
     align-items:center;
     margin-top: 20px;
+}
+.flexbox h1 {
+    width:100%;
+    text-align:center;
+    margin-bottom:20px;
 }
 .container {
     width: 300px;
@@ -88,6 +140,7 @@ body {
 /* Bottom Bar starts here*/
 .bottom-bar {
     text-align: center;
+    margin-top: 30px;
 }
 .centeric {
     display:flex;
