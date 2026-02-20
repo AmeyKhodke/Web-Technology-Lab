@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .display {
+            background-color: #222;
+            color: white;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            min-height: 40px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            background-color: #666;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #888;
+        }
+        button.operator {
+            background-color: #f39c12;
+        }
+        button.operator:hover {
+            background-color: #e67e22;
+        }
+        button.equal {
+            background-color: #27ae60;
+            grid-column: span 2;
+        }
+        button.equal:hover {
+            background-color: #229954;
+        }
+        button.clear {
+            background-color: #e74c3c;
+        }
+        button.clear:hover {
+            background-color: #c0392b;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('(')">(</button>
+            <button onclick="appendToDisplay(')')">)</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+            
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="equal" onclick="calculate()">=</button>
+        </div>
+        <div class="error" id="error"></div>
+    </div>
+
+    <script>
+        let display = document.getElementById('display');
+        let errorDiv = document.getElementById('error');
+
+        function appendToDisplay(value) {
+            errorDiv.textContent = '';
+            if (display.textContent === '0' && value !== '.') {
+                display.textContent = value;
+            } else {
+                display.textContent += value;
+            }
+            validateInput();
+        }
+
+        function clearDisplay() {
+            display.textContent = '0';
+            errorDiv.textContent = '';
+        }
+
+        function calculate() {
+            try {
+                let expression = display.textContent;
+                
+                // Basic validation
+                if (!isValidExpression(expression)) {
+                    throw new Error('Invalid expression');
+                }
+                
+                // Check for division by zero
+                if (expression.includes('/0')) {
+                    throw new Error('Division by zero');
+                }
+                
+                // Evaluate the expression
+                let result = eval(expression);
+                
+                // Check if result is a number
+                if (isNaN(result) || !isFinite(result)) {
+                    throw new Error('Invalid calculation');
+                }
+                
+                display.textContent = result;
+            } catch (error) {
+                errorDiv.textContent = error.message;
+                display.textContent = 'Error';
+            }
+        }
+
+        function validateInput() {
+            let expression = display.textContent;
+            
+            // Check for consecutive operators
+            if (/[\+\-\*\/]{2,}/.test(expression)) {
+                errorDiv.textContent = 'Invalid: consecutive operators';
+                return false;
+            }
+            
+            // Check for invalid characters
+            if (/[^0-9\+\-\*\/\(\)\.]/.test(expression)) {
+                errorDiv.textContent = 'Invalid characters';
+                return false;
+            }
+            
+            // Check for mismatched parentheses
+            let openCount = (expression.match(/\(/g) || []).length;
+            let closeCount = (expression.match(/\)/g) || []).length;
+            if (openCount !== closeCount) {
+                errorDiv.textContent = 'Mismatched parentheses';
+                return false;
+            }
+            
+            return true;
+        }
+
+        function isValidExpression(expression) {
+            // Basic checks
+            if (!expression || expression === 'Error') {
+                return false;
+            }
+            
+            // Must end with a number or closing parenthesis
+            if (!/[0-9\)]$/.test(expression)) {
+                return false;
+            }
+            
+            // Must start with a number, opening parenthesis, or minus
+            if (!/^[0-9\(\-]/.test(expression)) {
+                return false;
+            }
+            
+            return true;
+        }
+
+        // Prevent keyboard input for now (optional)
+        document.addEventListener('keydown', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>
